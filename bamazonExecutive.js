@@ -86,8 +86,8 @@ var sqlQueries = {
 	addDepartment: function(department){
 		connection.query('INSERT INTO Departments SET ?', department, function(err, res){
 			if (err) {console.log(err)}
-			console.log(res)
 		})
+		prompts.mainMenu();
 	}
 }
 connection.connect(function(err){

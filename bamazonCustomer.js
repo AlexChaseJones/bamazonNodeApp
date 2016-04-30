@@ -34,7 +34,6 @@ var prompts = {
 				var insert = 'UPDATE Products JOIN Departments ON Products.DepartmentName = Departments.DepartmentName SET Products.StockQuantity = \'' + String((Number(stock) - Number(res.quantity))) + '\', Departments.TotalSales = Departments.TotalSales + \'' + String(((Number(price) * Number(res.quantity)).toFixed(2))) + '\' WHERE Products.ItemID = \'' + id + '\' AND Departments.DepartmentName = \'' + department + '\''
 				connection.query(insert, function(err, result) {
 					if (err) {console.log(err);return}
-					console.log(result)
 					console.log('---------------------------');
 					console.log('You succesfully bought ' + res.quantity + ' of item "' + name + '".' );
 					console.log('---------------------------');
